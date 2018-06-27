@@ -21,7 +21,7 @@ export class AuthService {
           .then(token => {
           this.token = token;
             console.log(token);
-            this.router.navigate(['/pipe']);
+            this.router.navigate(['/pipe'],{queryParams:{pageNumbre:503}});
 
           })
           .catch(err => console.log(err));

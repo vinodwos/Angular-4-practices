@@ -9,8 +9,14 @@
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
+
+    
   </h1>
+
+  <app-aninated></app-aninated>
 </div>
+
+
 <div class="container">
   <ul class="list-unstyled nav navbar-nav navbar-default">
     <!-- Important notes
@@ -23,6 +29,8 @@
     <li><a [routerLink]="['user']">User Comp</a></li>
     <li><a [routerLink]="['product',5,'iPhone']" [queryParams]="{pageNumber:5, call: 2}">Product</a></li>
     <li><a [routerLink]="['employee']">Employee</a></li>
+    <li><a [routerLink]="['lazy']">Lazy</a></li>
+    
   </ul>
 </div>
 <router-outlet>

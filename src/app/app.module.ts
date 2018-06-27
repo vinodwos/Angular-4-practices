@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {RouterModule} from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 
 import { DataService } from './services/dataservice';
@@ -26,6 +27,7 @@ import { ProductComponent } from './product/product.component';
 import { OverviewComponent } from './product/overview/overview.component';
 import { SpecificationComponent } from './product/specification/specification.component';
 import {EmployeeModule} from './employee/employee.module';
+import { AninatedComponent } from './aninated/aninated.component';
 
 
 
@@ -43,7 +45,8 @@ import {EmployeeModule} from './employee/employee.module';
     ObsDemoComponent,
     ProductComponent,
     OverviewComponent,
-    SpecificationComponent],
+    SpecificationComponent,
+    AninatedComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -51,7 +54,7 @@ import {EmployeeModule} from './employee/employee.module';
     HttpModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTS),
-    EmployeeModule
+    EmployeeModule,BrowserAnimationsModule
   ],
   providers: [DataService, AuthService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoggerInterceptor, multi: true },

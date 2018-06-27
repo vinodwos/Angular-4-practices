@@ -41,6 +41,10 @@ export const APP_ROUTS: Routes = [
         component: EmployeeComponent
     },
     {
+        path: 'lazy',
+        loadChildren: 'app/lazy/lazy.module#LazyModule'
+    },
+    {
         path: 'product/:id/:name',
         component: ProductComponent,
         children:[
