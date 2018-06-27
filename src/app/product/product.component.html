@@ -1,0 +1,17 @@
+<p>
+    Product ID : {{id}}
+    Product Name : {{name}}
+    Query Parms : {{queryParams | json}}
+  </p>
+<div class="container">
+  <ul class="list-unstyled nav navbar-nav navbar-default">
+    <li>
+      <a [routerLink]="['overview']">Overview</a>
+    </li>
+    <li>
+        <a [routerLink]="['spec']">Spec</a>
+      </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>

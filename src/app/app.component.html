@@ -1,0 +1,42 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <app-obs-demo></app-obs-demo> -->
+<!-- <app-pipe-demo></app-pipe-demo> -->
+
+
+
+<!-- <app-login></app-login> -->
+<!-- <app-register></app-register> -->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div class="container">
+  <ul class="list-unstyled nav navbar-nav navbar-default">
+    <!-- Important notes
+    To hide the below link for specific user use the *ngIf conditions to hide/show the menus
+    -->
+    <li><a [routerLink]="['login']">Login</a></li>
+    <li><a [routerLink]="['register']">Register</a></li>
+    <li><a [routerLink]="['pipe']">Pipe</a></li>
+    <li><a [routerLink]="['obs']">Observable Demo</a></li>
+    <li><a [routerLink]="['user']">User Comp</a></li>
+    <li><a [routerLink]="['product',5,'iPhone']" [queryParams]="{pageNumber:5, call: 2}">Product</a></li>
+    <li><a [routerLink]="['employee']">Employee</a></li>
+  </ul>
+</div>
+<router-outlet>
+
+</router-outlet>
+
+<!-- <div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<app-user [title]='title' [users]='users' (childChanged)="childChanged($event)">
+    <header>Header</header>
+      <main>main</main>
+      <footer>Footer</footer>
+
+</app-user> -->

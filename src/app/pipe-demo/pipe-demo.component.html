@@ -1,0 +1,19 @@
+<div class="container">
+  <p>
+    Future Data : {{futureData | async}}
+    <br/> Contact Information: {{contactNumber | nationalcode}}
+  </p>/div>
+
+  <p>
+    <input type="text" [(ngModel)]="filteredStatus">
+  </p>
+  <br>
+  <button class="btn btn-primary" (click)="addTodo()">Add New Todo</button>
+  <ul class="list-group">
+    <li *ngFor="let todo of todos | filter : filteredStatus : 'status'" class="list-group-item" >
+      {{todo.label}}
+      <span class="badge">
+        {{todo.status}}
+      </span>
+    </li>
+  </ul>

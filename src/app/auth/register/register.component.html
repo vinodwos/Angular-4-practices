@@ -1,0 +1,25 @@
+<div class="container">
+    <form [formGroup]="registerForm">
+      <h1>Register</h1>
+      <div class="form-group">
+        <label for="username"> User Name: </label>
+        <input type="text" name="username" class="form-control" [formControl]="username">
+        <div [hidden]="username.valid || username.untouched">
+          Something bad happen with username!
+          <div [hidden]="username.hasError('minlenght')">
+              username should have at least 6 characters!
+            </div>
+        </div>
+
+        
+      </div>
+      <div class="form-group">
+        <label for="password"> Password: </label>
+        <input type="password" name="password" class="form-control" [formControl]="password">
+        <div [hidden]="!password.hasError('needExclamation')">
+            password must contain exclamation symbol.
+        </div>
+      </div>
+      <button  (click)="register()" [disabled]="!registerForm.valid">Register</button>
+    </form>
+  </div>

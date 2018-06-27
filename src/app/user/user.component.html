@@ -1,0 +1,51 @@
+{{users | json}}
+
+<div class="container text-center text-primary">
+    <h1>Parent propery is {{title}}</h1>
+
+    Child Control :
+    <input type ="text" #childControl (keyup)="onKeyUp(childControl.value)">
+</div>
+<!-- data projection -->
+<div class="container">
+    <ng-content select="footer"></ng-content>
+</div>
+<div class="container">
+    <ul class="list-unstyled">
+        <li class="well" *ngFor="let user of users; first as isFirst; index as i">
+            {{i}}{{isFirst}}
+            <img [src]="user.image" alt="">
+            <button (click)="moreInfo(user)">More Info</button>
+            <h1 appHighlight [defaultColor]="myColor">{{user.firstName | titlecase}} {{user.lastName}}</h1>
+            <h5 [ngClass]="myClasses">{{user.company}}</h5>
+            <p *appUnless="user.votes==0">Total Votes: {{user.votes}}</p>
+            <em *ngIf="user.votes>0; else elseTemplate" class ="pull-right">
+                Total Votes: {{user.votes}}
+                <!-- <input type="number"
+                [value]="user.votes"
+                (change)="user.votes=$event.target.value"
+                > -->
+                <input type="number"
+                [(ngModel)]="user.votes"
+                >
+                
+            </em>
+
+            <ng-template #elseTemplate>{{user.firstName}} not voting now!!
+            </ng-template>
+        </li>
+
+    </ul>
+    
+</div>
+<!-- data projection -->
+<!-- <div class="container">
+        <ng-content select="footer"></ng-content>
+    </div> -->
+
+    <div [ngSwitch]="1">
+            <div *ngSwitchCase="1">1</div>        
+            <div *ngSwitchCase="2">2</div>        
+            <div *ngSwitchCase="3">3</div>        
+            <div *ngSwitchCase="4">4</div>        
+        </div>  
